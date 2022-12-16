@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christmas Tree</title>
+
+    <style>
+      img {
+        position: absolute;
+      }
+
+      .hide {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      onchange="toggleImage('lightsImage')"
+      checked
+      type="checkbox"
+      name="lights"
+    />
+    <label>Lights</label>
+    <input
+      onchange="toggleImage('starsImage')"
+      checked
+      type="checkbox"
+      name="stars"
+    />
+    <label>Stars</label>
+    <input
+      onchange="toggleImage('topperImage')"
+      checked
+      type="checkbox"
+      name="topper"
+    />
+    <label>Topper</label>
+    <br />
+    <img src="Miercoles 4-6 COMPILADORES/images/santa.jpg" />
+    <img src="Miercoles 4-6 COMPILADORES/images/tree.png" />
+    <img id="starsImage" src="Miercoles 4-6 COMPILADORES/images/stars.png" />
+    <img id="topperImage" src="Miercoles 4-6 COMPILADORES/images/topper.png" />
+    <img id="lightsImage" src="Miercoles 4-6 COMPILADORES/images/lights.png" />
+
+    <script>
+      function toggleImage(imageId) {
+        document.getElementById(imageId).classList.toggle("hide");
+      }
+    </script>
+    <audio controls>
+        <source src="Miercoles 4-6 COMPILADORES/music/Navidad Sin Ti.mp3" type="audio/mp3">
+            Tu navegador no soporta audio HTML5.
+    </audio>
+  </body>
+</html>
