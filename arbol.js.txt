@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	pre {display:inline-block;}
+	</style>
+</head>
+ 
+<body>
+	<pre id="arbol1"></pre> <pre id="arbol2"></pre>
+</body>
+ 
+<script>
+function arbolA(id) {
+	// definimos la anchura máxima
+	var max=20;
+	// determina el numero de lineas mostradas
+	var j=1;
+	// contiene el resultado a mostrar
+	var result="";
+ 
+	for(i=1;i<=max;i+=2)
+	{
+		result+="<br>"+(Array((1+(Math.ceil(max/2))-j)).join(" ")+Array(i+1).join("*"));
+		j=j+1;
+	}
+ 
+	//tronco
+	if(max>=7)
+	{
+		result+="<br>"+(Array((1+(Math.ceil(max/2))-2)).join(" ")+Array(4).join("*"));
+		result+="<br>"+(Array((1+(Math.ceil(max/2))-2)).join(" ")+Array(4).join("*"));
+	}
+ 
+	document.getElementById(id).innerHTML=result;
+}
+ 
+function arbolB(id) {
+	// definimos la anchura máxima
+	var max=20;
+	// variables de interación
+	var j=1,k=1;
+	// contiene el resultado a mostrar
+	var result="";
+ 
+	for(var h=1;h<3;h++)
+	{
+		for(var i=k;i<=max;i+=2)
+		{
+			result+="<br>"+(Array((1+(Math.ceil(max/2))-j)).join(" ")+Array(i+1).join("*"));
+			j=j+1;
+		}
+		k=5;
+		j=3;
+	}
+	//tronco
+	if(max>=7)
+	{
+		result+="<br>"+(Array((1+(Math.ceil(max/2))-2)).join(" ")+Array(4).join("*"));
+		result+="<br>"+(Array((1+(Math.ceil(max/2))-2)).join(" ")+Array(4).join("*"));
+	}
+ 
+	document.getElementById(id).innerHTML=result;
+}
+ 
+arbolA("arbol1");
+arbolB("arbol2");
+</script>
+</html>
